@@ -19,6 +19,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('avatar');
+            $table->string('phone');
+            $table->string('address');
+            $table->unsignedBigInteger('group_id');
+            $table->foreign('group_id')->references('id')->on('groups');
+            $table->boolean('soft_delete');
             $table->rememberToken();
             $table->timestamps();
         });
