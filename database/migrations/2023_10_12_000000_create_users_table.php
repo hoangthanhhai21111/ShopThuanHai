@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('address');
             $table->unsignedBigInteger('group_id');
             $table->foreign('group_id')->references('id')->on('groups');
-            $table->boolean('soft_delete');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });
