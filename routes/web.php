@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('backend.masster');
+
+Route::prefix('categories')->group(function () {
+    Route::get('/trash', [CategoryController::class, 'trashedItems'])->name('categories.trash');
+    Route::put('/force_destroy/{id}', [CategoryController::class, 'force_destroy'])->name('categories.force_destroy');
+    Route::put('/restore/{id}', [CategoryController::class, 'restore'])->name('categories.restore');
 });
-
-
-Route::resource('category', CategoryController::class);
+Route::resource('categories',CategoryController::class);
