@@ -118,7 +118,7 @@
                                     <tr>
                                         <td class="align-middle"> {{ $category->id }} </td>
                                         <td class="align-middle"> {{ $category->name }} </td>
-                                        <td>
+                                        {{-- <td>
                                             @if ($category->status == 1)
                                                 <a href="">
                                                     <i class=" fas fa-chevron-circle-down text-success"></i>
@@ -128,7 +128,7 @@
                                                     <i class=" far fa-times-circle text-danger"></i>
                                                 </a>
                                             @endif
-                                        </td>
+                                        </td> --}}
 
                                         <td>
                                             <div class="container">
@@ -165,7 +165,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{-- {{ $categorys->onEachSide(5)->links() }} --}}
+                        {{ $categories->onEachSide(5)->links() }}
                     </div>
                 </div>
             </div>

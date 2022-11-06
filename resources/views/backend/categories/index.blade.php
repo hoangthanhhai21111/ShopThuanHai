@@ -104,11 +104,11 @@
                                         <td class="align-middle"> {{ $category->name }} </td>
                                         <td>
                                             @if ($category->status == 1)
-                                                <a href="">
+                                                <a href="{{ route('categories.hideStatus', $category->id) }}">
                                                     <i class=" fas fa-chevron-circle-down text-success"></i>
                                                 </a>
                                             @else
-                                                <a href="">
+                                                <a href="{{ route('categories.showStatus', $category->id) }}">
                                                     <i class=" far fa-times-circle text-danger"></i>
                                                 </a>
                                             @endif

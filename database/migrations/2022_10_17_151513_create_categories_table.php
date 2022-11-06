@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('status')->nullable();
+            $table->tinyInteger('status')->default('0')->comment('0=Hide, 1=Show');
             $table->softDeletes();
             $table->timestamps();
         });

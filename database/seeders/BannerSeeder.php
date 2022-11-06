@@ -17,7 +17,7 @@ class BannerSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 2; $i++) {
             $status = 0;
             if($i%2==0){
                 $status=1;

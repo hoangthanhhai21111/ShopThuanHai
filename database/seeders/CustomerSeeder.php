@@ -17,9 +17,9 @@ class CustomerSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 2; $i++) {
             DB::table('customers')->insert([
-                    'name' => Str::random(10),
+                    'name' => Str::random(5),
                     'email' => Str::random(10) . '@gmail.com',
                     'password' => Hash::make('password'),
                     'phone' => Str::random(10),

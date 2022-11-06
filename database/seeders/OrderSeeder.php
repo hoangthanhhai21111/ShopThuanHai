@@ -16,11 +16,11 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 2; $i++) {
             DB::table('orders')->insert([
-                    'note' => Str::random(10),
-                    'address' => Str::random(10),
-                    'order_total_price' => Str::random(10),
+                    'note' => Str::random(3),
+                    'address' => Str::random(3),
+                    'order_total_price' => Str::random(3),
                     'customer_id' => $i,
             ]);
         }
