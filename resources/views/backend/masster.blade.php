@@ -114,6 +114,23 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('AdminTheme/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('AdminTheme/js/demo/chart-pie-demo.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function() {
+            if ($('#blah').hide()) {
+                $('#blah').hide();
+            }
+            jQuery('#inputFile').change(function() {
+                $('#blah').show();
+                const file = jQuery(this)[0].files;
+                if (file[0]) {
+                    jQuery('#blah').attr('src', URL.createObjectURL(file[0]));
+                    jQuery('#blah1').attr('src', URL.createObjectURL(file[0]));
+                }
+            });
+        });
+    </script>
 
 </body>
 
