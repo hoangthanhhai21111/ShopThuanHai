@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('logo');
-            $table->boolean('status')->nullable();
+            $table->tinyInteger('status')->default('0')->comment('0=Hide, 1=Show');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

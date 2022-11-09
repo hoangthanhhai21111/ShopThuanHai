@@ -21,8 +21,10 @@ return new class extends Migration
             $table->longText('description');
             $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('brand_id')->constrained('brands');
-            $table->boolean('status')->nullable();
+            $table->tinyInteger('status')->default('0')->comment('0=Hide, 1=Show');
             $table->timestamps();
+            $table->softDeletes();
+            $table->string('image');
         });
     }
 
