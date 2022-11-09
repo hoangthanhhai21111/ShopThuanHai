@@ -13,6 +13,10 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('AdminTheme/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -92,6 +96,21 @@
             </div>
         </div>
     </div>
+    <script>
+        jQuery(document).ready(function() {
+            if ($('#blah').hide()) {
+                $('#blah').hide();
+            }
+            jQuery('#inputFile').change(function() {
+                $('#blah').show();
+                const file = jQuery(this)[0].files;
+                if (file[0]) {
+                    jQuery('#blah').attr('src', URL.createObjectURL(file[0]));
+                    jQuery('#blah1').attr('src', URL.createObjectURL(file[0]));
+                }
+            });
+        });
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('AdminTheme/vendor/jquery/jquery.min.js')}}"></script>
